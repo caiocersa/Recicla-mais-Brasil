@@ -4193,9 +4193,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 7px 15px;
   font-size: 18px;
   line-height: 20px;
+  width:180px;
+  height:80px;
 }
 
 .navbar-brand:hover,
@@ -4246,6 +4248,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  font-size:18px;
 }
 
 @media (max-width: 767px) {
@@ -4273,8 +4276,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (min-width: 768px) {
   .navbar-nav {
-    float: left;
-    margin: 0;
+    float: right;
+    margin: 20px;
   }
   .navbar-nav > li {
     float: left;
@@ -4388,7 +4391,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-color: #e7e7e7;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand { 
   color: #777777;
 }
 
@@ -4501,8 +4504,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-color: rgba(255, 255, 255, 0.97);
 }
 
 .navbar-inverse .navbar-brand {
@@ -4511,7 +4514,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
+  color: #006633;
   background-color: transparent;
 }
 
@@ -4525,7 +4528,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #006633;
   background-color: transparent;
 }
 
@@ -4929,7 +4932,7 @@ a.list-group-item.active > .badge,
 
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
@@ -6813,4 +6816,110 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+#primeiro {
+    background-image: url(Images/fundo-primeiro.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    vertical-align: central;
+    align-items: center !important;
+    align-self: center;
+}
+
+#segundo {
+    background-color: #006633;
+    vertical-align: central;
+    align-items: center;
+    align-self: center;
+}
+
+#texto-meio {
+    padding-top: 59px;
+    color: #fff;
+}
+
+#texto-1 {
+    float: right;
+}
+
+#numeros {
+    min-height: 291px !important;
+    min-width: 291px !important;
+}
+
+#texto-numeros {
+    font-family: 'Gotham Book';
+    font-size: 30px;
+    stroke: #fff;
+    color: #fff;
+    text-align: center;
+    vertical-align: central;
+    align-items: center !important;
+    align-self: center;
+    text-align: center;
+    width: 291px;
+    height: 291px;
+}
+
+#linha {
+    padding-top: 200px !important;
+}
+
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align: center;
+    /* inline-block space fix */
+    margin-right: -4px;
+}
+
+#terceiro {
+    background-image: url(Images/background-site.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    vertical-align: central;
+    align-items: center !important;
+    align-self: center;
+}
+
+#logo-bottom {
+    width: 303.32px;
+    height: 111px;
+}
+
+#logo-insta {
+    width: 106px;
+    height: 106px;
+    align-items: center;
+}
+
+#logo-twitter {
+    width: 119px;
+    height: 119px;
+    align-items: center;
+}
+
+#logo-facebook {
+    width: 106px;
+    align-items: center;
+    height: 106px;
+}
+
+.margem {
+    margin-top: 69.5px;
+}
+
+#texto-2 {
+    width: 289px;
+    height: 137px;
 }

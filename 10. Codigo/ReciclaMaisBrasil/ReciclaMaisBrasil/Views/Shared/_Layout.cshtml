@@ -4,35 +4,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title> Recicla Mais Brasil - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="margin:0px;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="#" style="width:180px; height:80px; padding:7px 15px">
+                    <img src="~/Content/Images/logo-nav-top.svg" alt="Brand" style="width:150px;height:67.69px;">
+                </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                <ul class="nav navbar-nav fonte-texto-menu">
+                    <li>@Html.ActionLink("Login", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Cadastro", "About", "Home")</li>
                     <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Como Funciona ?", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+
+    <div class=" body-content-fix">
+
         @RenderBody()
-        <hr />
+        
         <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            <div class="row">
+                <div class="jumbotron" id="terceiro" style="margin-bottom:0px !important;min-height: 768px !important;">
+                    <div class="row row-centered  margem">
+                        <img src="~/Content/Images/logo-bottom.svg" id="logo-bottom" />
+                    </div>
+                    <div class="row row-centered  margem">
+                        <div class="col-md-2 col-centered "><img src="~/Content/Images/instagram-icon.png" id="logo-insta" /></div>
+                        <div class="col-md-2 col-centered"><img src="~/Content/Images/twitter-icon.png" id="logo-twitter" /></div>
+                        <div class="col-md-2 col-centered"><img src="~/Content/Images/facebook-icon.svg" id="logo-facebook" /></div>
+                    </div>
+                    <div class="row row-centered margem">
+                        ©2017 - @DateTime.Now.Year - All rigths reserved to CAMNSystem
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 

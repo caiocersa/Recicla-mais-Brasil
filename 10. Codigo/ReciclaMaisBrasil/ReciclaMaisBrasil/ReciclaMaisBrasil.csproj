@@ -149,7 +149,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\background-site.png" />
+    <Content Include="Content\Images\facebook-icon.svg" />
+    <Content Include="Content\Images\fundo-lixo.svg" />
+    <Content Include="Content\Images\fundo-primeiro.svg" />
+    <Content Include="Content\Images\instagram-icon.png" />
+    <Content Include="Content\Images\logo-bottom.svg" />
+    <Content Include="Content\Images\logo-nav-top.svg" />
+    <Content Include="Content\Images\numero-1.svg" />
+    <Content Include="Content\Images\numero-2.svg" />
+    <Content Include="Content\Images\numero-3.svg" />
+    <Content Include="Content\Images\numero-4.svg" />
+    <Content Include="Content\Images\twitter-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
