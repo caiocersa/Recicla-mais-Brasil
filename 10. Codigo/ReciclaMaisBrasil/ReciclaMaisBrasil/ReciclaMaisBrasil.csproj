@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,10 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Model\bin\Debug\Model.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -141,7 +146,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SolicitarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,11 +157,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Images\background-site.png" />
+    <Content Include="Content\Images\bell-icon.svg" />
+    <Content Include="Content\Images\cadastro\buttom-inst-cadastro.svg" />
+    <Content Include="Content\Images\cadastro\buttom-user-cadastro.svg" />
     <Content Include="Content\Images\facebook-icon.svg" />
     <Content Include="Content\Images\fundo-lixo.svg" />
     <Content Include="Content\Images\fundo-primeiro.svg" />
     <Content Include="Content\Images\instagram-icon.png" />
     <Content Include="Content\Images\logo-bottom.svg" />
+    <Content Include="Content\Images\logo-branco.svg" />
     <Content Include="Content\Images\logo-nav-top.svg" />
     <Content Include="Content\Images\numero-1.svg" />
     <Content Include="Content\Images\numero-2.svg" />
@@ -195,9 +206,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutUsuario.cshtml" />
+    <Content Include="Views\Shared\_LayoutInstituicao.cshtml" />
+    <Content Include="Views\Shared\_LayoutSemMenu.cshtml" />
+    <Content Include="Views\Cadastro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Solicitar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -215,10 +231,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{37f9a63d-bb38-4efc-8da7-10ef396d30ba}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{5aa49561-5104-4194-a61d-43955d85de13}</Project>
       <Name>Negocio</Name>

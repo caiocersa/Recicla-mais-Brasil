@@ -6923,3 +6923,52 @@ td.visible-print {
     width: 289px;
     height: 137px;
 }
+
+#bell-HW {
+    width: 10px;
+}
+
+#body-fundo {
+    background-image: url(Images/background-site.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    vertical-align: central;
+    align-items: center !important;
+    align-self: center;
+}
+
+#box-cadastro {
+    width: 788px;
+    height: 591.2px;
+    border-color: gray;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px black solid;
+    background-color:white;
+}
+
+#linha-logo {
+    height: 149.9px;
+    background-color: #006633;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo-branco-cadastro {
+    width: 284.8px !important;
+    height: 128.4px !important;
+    margin-top: 9.3px;
+}
+
+#bell-icon {
+    width:24px;
+    height:24px;
+}
+
+#buttom-cadastro {
+    width:242px;
+    height:242px;
+}

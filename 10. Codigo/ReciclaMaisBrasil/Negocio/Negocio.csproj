@@ -46,10 +46,6 @@
     <Folder Include="Business\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{37f9a63d-bb38-4efc-8da7-10ef396d30ba}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Persistencia\Persistencia.csproj">
       <Project>{067202a3-3cd3-4dd6-8a85-2c83c24a6226}</Project>
       <Name>Persistencia</Name>
