@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Models
 {
-    class Instituicao : Usuario
+    public class Instituicao : Usuario
     {
         public String DocInstituicao { get; set; }
         public String PwInstituicao { get; set; }

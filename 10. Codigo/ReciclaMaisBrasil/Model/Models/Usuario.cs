@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model.Models
 {
-    class Usuario
+    public class Usuario
     {
-
+        public int IdUsuario { get; set; }
         public String Email { get; set; }
         public int Cep { get; set; }
         public String TpLogarouro { get; set; }
@@ -19,5 +19,14 @@ namespace Model.Models
         public int NumEndereco { get; set; }
         public String Complemento { get; set; }
         public int NvAcesso { get; set; }
+
+
+        public Usuario(int IdUsuario, String Email)
+        {
+            this.IdUsuario = IdUsuario;
+            this.Email = Email;
+        }
+
+        public Usuario() : this(0, null) { }
     }
 }

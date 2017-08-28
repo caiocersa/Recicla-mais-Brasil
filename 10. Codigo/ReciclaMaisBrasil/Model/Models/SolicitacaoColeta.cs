@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Models
 {
-    class Solicitacao_Coleta
+    public class SolicitacaoColeta
     {
         private String Reciclavel { get; set; }
         private DateTime DtSolicitacao { get; set; }

@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\GerenciadorUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Business\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{b4294105-7a8a-4d51-8d2b-b55c31262f89}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Persistencia\Persistencia.csproj">
       <Project>{067202a3-3cd3-4dd6-8a85-2c83c24a6226}</Project>
       <Name>Persistencia</Name>

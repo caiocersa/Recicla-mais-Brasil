@@ -146,8 +146,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstituicaoController.cs" />
+    <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\SolicitarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,10 +210,12 @@
     <Content Include="Views\Shared\_LayoutUsuario.cshtml" />
     <Content Include="Views\Shared\_LayoutInstituicao.cshtml" />
     <Content Include="Views\Shared\_LayoutSemMenu.cshtml" />
-    <Content Include="Views\Cadastro\Index.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Instituicao\" />
+    <Folder Include="Views\Pessoa\" />
     <Folder Include="Views\Solicitar\" />
   </ItemGroup>
   <ItemGroup>
