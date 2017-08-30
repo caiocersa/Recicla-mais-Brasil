@@ -1,0 +1,5 @@
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\teste\bin\Debug\teste.dll
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\teste\bin\Debug\teste.pdb
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\teste\obj\Debug\teste.csproj.CoreCompileInputs.cache
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\teste\obj\Debug\teste.dll
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\teste\obj\Debug\teste.pdb

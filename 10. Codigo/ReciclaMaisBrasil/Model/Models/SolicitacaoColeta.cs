@@ -8,11 +8,13 @@ namespace Model.Models
 {
     public class SolicitacaoColeta
     {
-        private String Reciclavel { get; set; }
-        private DateTime DtSolicitacao { get; set; }
-        private Byte FotoReciclavel { get; set; }
-        private String DescReciclavel { get; set; }
-        private int Status { get; set; }
-        private int Pontuacao { get; set; }
+
+        public string Reciclavel { get; set; }
+        public DateTime DtSolicitacao { get; set; }
+        public byte FotoReciclavel { get; set; }
+        public string DescReciclavel { get; set; }
+        public int Status { get; set; }
+        public int Pontuacao { get; set; }
+
     }
 }

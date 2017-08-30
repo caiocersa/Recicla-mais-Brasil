@@ -15,7 +15,17 @@ namespace Model.Models
         public string Telefone { get; set; }
         public DateTime DtNasc { get; set; }
         public int Pontuacao { get; set; }
+        public int NvAcesso { get; set; }
 
+
+
+        public Pessoa(int IdUsuario, string Email)
+        {
+            this.IdUsuario = IdUsuario;
+            this.Email = Email;
+        }
+
+        public Pessoa() : this(0, null) { }
 
     }
 }

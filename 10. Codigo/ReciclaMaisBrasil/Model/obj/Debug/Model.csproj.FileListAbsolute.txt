@@ -1,5 +1,5 @@
-C:\Users\caio_\Desktop\LocalHost\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\bin\Debug\Model.dll
-C:\Users\caio_\Desktop\LocalHost\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\bin\Debug\Model.pdb
-C:\Users\caio_\Desktop\LocalHost\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-C:\Users\caio_\Desktop\LocalHost\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\obj\Debug\Model.dll
-C:\Users\caio_\Desktop\LocalHost\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\obj\Debug\Model.pdb
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\bin\Debug\Model.dll
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\bin\Debug\Model.pdb
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\obj\Debug\Model.dll
+C:\Users\caio_\Desktop\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Model\obj\Debug\Model.pdb

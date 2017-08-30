@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Negocio.Business;
+using Model.Models;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class PessoaController : Controller
     {
+        private GerenciadorPessoa gerenciador;
+
+        public PessoaController()
+        {
+            gerenciador = new GerenciadorPessoa();
+        }
+
         // GET: Pessoa
         public ActionResult Index()
         {
@@ -28,18 +37,21 @@ namespace ReciclaMaisBrasil.Controllers
 
         // POST: Pessoa/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Pessoa pessoa)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    gerenciador.Adicionar(pessoa);
+                    return RedirectToAction("Index","Home");
+                }
             }
             catch
             {
-                return View();
+
             }
+            return View();
         }
 
         // GET: Pessoa/Edit/5
