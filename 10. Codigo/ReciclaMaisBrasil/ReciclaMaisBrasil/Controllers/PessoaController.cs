@@ -37,7 +37,7 @@ namespace ReciclaMaisBrasil.Controllers
 
         // POST: Pessoa/Create
         [HttpPost]
-        public ActionResult Create(Pessoa pessoa)
+        public ActionResult Create([Bind(Exclude = "IdUsuario, Pontuacao, NvAcesso")] Pessoa pessoa)
         {
             try
             {
@@ -96,6 +96,16 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult List()
+        {
+            return View(gerenciador.ObterTodos());
+        }
+
+        public ActionResult teste()
+        {
+            return View();
         }
     }
 }

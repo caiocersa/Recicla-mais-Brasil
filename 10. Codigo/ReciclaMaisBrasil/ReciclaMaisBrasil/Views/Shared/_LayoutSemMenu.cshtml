@@ -13,10 +13,12 @@
     <div class=" body-content" id="body-fundo">
 
         @RenderBody()
+        <footer>
+            <div class="row row-centered margem">
+                ©2017 - @DateTime.Now.Year - All rigths reserved to CAMNSystem
+            </div>
+        </footer>
 
-        <div class="row row-centered margem">
-            ©2017 - @DateTime.Now.Year - All rigths reserved to CAMNSystem
-        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

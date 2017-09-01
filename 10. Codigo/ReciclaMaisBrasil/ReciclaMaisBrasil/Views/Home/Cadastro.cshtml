@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+    Layout = "~/Views/Shared/_LayoutSemMenu.cshtml";
+}
+
+<div class="row row-centered" id="box-cadastro">
+    <div class="row row-centered" id="linha-logo">
+        <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Content/Images/logo-branco.svg")" id="logo-branco-cadastro" /></a>
+    </div>
+    <div class="row" style="margin-top:77.3px; margin-bottom:77.3px;">
+            <a href="@Url.Action("Create","Pessoa")"><img src="@Url.Content("~/Content/Images/cadastro/buttom-user-cadastro.svg")" id="buttom-cadastro" /></a>
+            <a href="@Url.Action("Cadastro","Instituicao")"><img src="@Url.Content("~/Content/Images/cadastro/buttom-inst-cadastro.svg")" id="buttom-cadastro" /></a>      
+    </div>
+</div>
+
