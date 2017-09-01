@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Model.Models.Instituicao>
+
+@{
+    ViewBag.Title = "Mostrar";
+    Layout = "~/Views/Shared/_LayoutSemMenu.cshtml";
+}
+
+<h2>Mostrar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TpLogarouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmEndereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumEndereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocInstituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PwInstituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmInstituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumColeta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TpLogarouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NmEndereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumEndereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocInstituicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PwInstituicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NmInstituicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NmResponsavel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumColeta)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdUsuario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdUsuario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuario })
+        </td>
+    </tr>
+}
+
+</table>

@@ -3,15 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Model.Models;
+using Negocio.Business;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class InstituicaoController : Controller
     {
+        private GerenciadorInstituicao gerenciador;
+
+        public InstituicaoController()
+        {
+            gerenciador = new GerenciadorInstituicao();
+        }
+
+
         // GET: Instituicao
         public ActionResult Index()
         {
-            return View();
+            return View(gerenciador.ObterTodos());
         }
 
         // GET: Instituicao/Details/5
@@ -28,18 +38,21 @@ namespace ReciclaMaisBrasil.Controllers
 
         // POST: Instituicao/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Exclude = "idUsuario, NumColeta, NumEndereco")]Instituicao instituicao)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    gerenciador.Adicionar(instituicao);
+                    return RedirectToAction("Mostrar");   
+                }
             }
             catch
             {
-                return View();
+               
             }
+            return View();
         }
 
         // GET: Instituicao/Edit/5
@@ -84,6 +97,11 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Mostrar()
+        {
+            return View(gerenciador.ObterTodos());
         }
     }
 }
