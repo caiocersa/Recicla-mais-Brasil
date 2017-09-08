@@ -1,0 +1,17 @@
+﻿@using Jmelosegui.Mvc.GoogleMap
+
+<div class="row">
+    <div class="col-md-8" id="map" style="min-height: 858px; min-width:75%;">
+        @(Html.GoogleMap()
+              .Name("map")
+              .Height(500)
+              .ApiKey("AIzaSyCxS1skBoTzMaPwY4q42MJoH5NwKmM9zKE")
+        )
+    </div>
+</div>
+
+
+@section scripts
+{
+    @(Html.GoogleMap().ScriptRegistrar())
+}

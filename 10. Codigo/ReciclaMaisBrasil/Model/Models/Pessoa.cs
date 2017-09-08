@@ -35,6 +35,7 @@ namespace Model.Models
         [DisplayFormat(DataFormatString = "dd/mm/yyyy")]
         public DateTime DtNasc { get; set; }
 
+        [Display(Name = "Sua Pontuação:")]
         public int Pontuacao { get; set; }
 
         public int NvAcesso { get; set; }

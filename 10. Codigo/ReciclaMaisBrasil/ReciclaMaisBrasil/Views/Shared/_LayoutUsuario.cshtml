@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="margin:0px;">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="position:static;margin-bottom:5px;">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#" style="width:180px; height:80px; padding:7px 15px">
@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav fonte-texto-menu">
+                <ul class="nav navbar-nav fonte-texto-menu" style="margin-bottom:5px;">
                     <li>@Html.ActionLink("Historico", "Index", "Home")</li>
                     <li>@Html.ActionLink("Loja", "About", "Home")</li>
                     <li>@Html.ActionLink("Formas de Reciclagem", "Contact", "Home")</li>
@@ -32,10 +32,13 @@
 
     <div class=" body-content">
         @RenderBody()
-    </div>    
+    </div>
+    
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/map.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
