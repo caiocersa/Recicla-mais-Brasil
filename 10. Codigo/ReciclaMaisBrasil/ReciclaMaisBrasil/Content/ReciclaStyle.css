@@ -167,3 +167,15 @@
     margin-right: 30px;
     margin-bottom: 30px;
 }
+
+#box-pontuacao {
+    height: 202px !important;
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    background-color: #006633;
+    padding-top: 75px;
+    font-size: x-large;
+    color: white;
+}
