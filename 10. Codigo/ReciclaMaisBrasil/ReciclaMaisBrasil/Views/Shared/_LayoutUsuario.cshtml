@@ -7,9 +7,16 @@
     <title> Recicla Mais Brasil - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @using ReciclaMaisBrasil.Util;  
+    @using Model.Models;
 </head>
-<body style="margin:0px;">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+@{ 
+    Pessoa pessoa = (Pessoa) SessionHelper.Get(SessionKeys.PESSOA);
+    
+
+}
+<body id="body-fundo" style="margin:0px;">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="position:static;margin-bottom:5px;">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#" style="width:180px; height:80px; padding:7px 15px">
@@ -17,12 +24,12 @@
                 </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav fonte-texto-menu">
+                <ul class="nav navbar-nav fonte-texto-menu" style="margin-bottom:5px;">
                     <li>@Html.ActionLink("Historico", "Index", "Home")</li>
                     <li>@Html.ActionLink("Loja", "About", "Home")</li>
                     <li>@Html.ActionLink("Formas de Reciclagem", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Solicitar Coleta", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Perfil", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Perfil", "Edit", new { controller="Pessoa", id = pessoa.IdUsuario}  )</li>
                     <li>@Html.ActionLink("Sair", "Contact", "Home")</li>
                     <li><a href="@Url.Action("Index","Home")"><img src="~/Content/Images/bell-icon.svg" id="bell-icon" /></a></li>
                 </ul>
@@ -30,12 +37,15 @@
         </div>
     </div>
 
-    <div class=" body-content">
+    <div class=" body-content" >
         @RenderBody()
-    </div>    
+    </div>
+    
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/map.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

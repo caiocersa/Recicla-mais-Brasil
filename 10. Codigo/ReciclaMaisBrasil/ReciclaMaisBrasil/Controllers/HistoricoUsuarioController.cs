@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Model.Models;
+using ReciclaMaisBrasil.Util;
+using Jmelosegui.Mvc.GoogleMap;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class HistoricoUsuarioController : Controller
     {
+        Pessoa user = (Pessoa)SessionHelper.Get(SessionKeys.PESSOA);
         // GET: HistoricoUsuario
+
         public ActionResult Index()
         {
-            return View();
+            return View(user);
         }
 
         // GET: HistoricoUsuario/Details/5
@@ -84,6 +85,22 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult map()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Pontuacao()
+        {
+            Usuario user = (Usuario) SessionHelper.Get(SessionKeys.PESSOA);
+            return PartialView(user);
+        }
+
+        public ActionResult ExibirHistorico()
+        {
+            return PartialView();
         }
     }
 }

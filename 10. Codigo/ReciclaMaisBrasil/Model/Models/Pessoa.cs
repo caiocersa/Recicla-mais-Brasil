@@ -32,9 +32,10 @@ namespace Model.Models
 
         [Display(Name = "Nascimento :")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "dd/mm/yyyy")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DtNasc { get; set; }
 
+        [Display(Name = "Sua Pontuação:")]
         public int Pontuacao { get; set; }
 
         public int NvAcesso { get; set; }
