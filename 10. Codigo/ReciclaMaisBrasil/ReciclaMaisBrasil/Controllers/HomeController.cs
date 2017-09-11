@@ -39,6 +39,7 @@ namespace ReciclaMaisBrasil.Controllers
             p.Email = "caio_cersa_@hotmail.com";
             p.Estado = "SE";
             SessionHelper.Set(0, p);
+
             return View("Index");
         }
     }

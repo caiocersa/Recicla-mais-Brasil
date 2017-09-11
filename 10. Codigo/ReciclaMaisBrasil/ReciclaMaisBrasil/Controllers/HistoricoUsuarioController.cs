@@ -7,12 +7,11 @@ namespace ReciclaMaisBrasil.Controllers
 {
     public class HistoricoUsuarioController : Controller
     {
+        Pessoa user = (Pessoa)SessionHelper.Get(SessionKeys.PESSOA);
         // GET: HistoricoUsuario
-        
+
         public ActionResult Index()
         {
-
-            Pessoa user = (Pessoa) SessionHelper.Get(0);
             return View(user);
         }
 
@@ -95,7 +94,7 @@ namespace ReciclaMaisBrasil.Controllers
 
         public ActionResult Pontuacao()
         {
-            Usuario user = (Usuario) SessionHelper.Get(0);
+            Usuario user = (Usuario) SessionHelper.Get(SessionKeys.PESSOA);
             return PartialView(user);
         }
 

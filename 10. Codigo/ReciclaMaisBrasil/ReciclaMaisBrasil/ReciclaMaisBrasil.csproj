@@ -165,6 +165,12 @@
     <Content Include="Content\Images\facebook-icon.svg" />
     <Content Include="Content\Images\fundo-lixo.svg" />
     <Content Include="Content\Images\fundo-primeiro.svg" />
+    <Content Include="Content\Images\jQuery\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Images\jQuery\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Images\jQuery\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Images\jQuery\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Images\jQuery\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Images\jQuery\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\Images\instagram-icon.png" />
     <Content Include="Content\Images\logo-bottom.svg" />
     <Content Include="Content\Images\logo-branco.svg" />
@@ -174,6 +180,8 @@
     <Content Include="Content\Images\numero-3.svg" />
     <Content Include="Content\Images\numero-4.svg" />
     <Content Include="Content\Images\twitter-icon.png" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\ReciclaStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -189,6 +197,7 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -217,8 +226,8 @@
     <Content Include="Views\Pessoa\List.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\HistoricoUsuario\Index.cshtml" />
-    <Content Include="Views\HistoricoUsuario\map.cshtml" />
     <Content Include="Views\HistoricoUsuario\Pontuacao.cshtml" />
+    <Content Include="Views\Pessoa\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

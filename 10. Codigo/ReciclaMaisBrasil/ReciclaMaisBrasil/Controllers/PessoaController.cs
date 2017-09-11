@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Negocio.Business;
 using Model.Models;
+using ReciclaMaisBrasil.Util;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class PessoaController : Controller
     {
         private GerenciadorPessoa gerenciador;
+        Pessoa user = (Pessoa) SessionHelper.Get(SessionKeys.PESSOA);
+        
 
         public PessoaController()
         {
@@ -44,6 +43,8 @@ namespace ReciclaMaisBrasil.Controllers
                 if (ModelState.IsValid)
                 {
                     gerenciador.Adicionar(pessoa);
+                    //Inserindo cadastrado na Sessão RETIRAR DEPOIS
+                    SessionHelper.Set(0, pessoa);
                     return RedirectToAction("Index","Home");
                 }
             }
@@ -55,25 +56,34 @@ namespace ReciclaMaisBrasil.Controllers
         }
 
         // GET: Pessoa/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit()
         {
-            return View();
+
+
+            return View(user);
+            
         }
 
         // POST: Pessoa/Edit/5
+
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Pessoa usuario)
         {
             try
             {
-                // TODO: Add update logic here
+                if(ModelState.IsValid)
+                {
+                    gerenciador.Editar(usuario);
+                    SessionHelper.Set(SessionKeys.PESSOA, usuario);
+                    return RedirectToAction("Index", "HistoricoUsuario");
+                }
 
-                return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+
             }
+            return RedirectToAction("Index", "HistoricoUsuario");
         }
 
         // GET: Pessoa/Delete/5
