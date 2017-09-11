@@ -9,7 +9,7 @@
          margin-left: 15px; margin-right: 15px;">
 
     <!-- Div com o logo-->
-    <div class="row" id="linha-logo">
+    <div class="row" id="linha-logo" style=" margin-top: 50px">
         <img src="@Url.Content("~/Content/Images/logo-branco.svg")" id="logo-branco-cadastro" />
     </div>
 
@@ -103,7 +103,7 @@
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.NumEndereco, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-4 text-center" >
+                    <div class="col-md-4 text-center">
                         @Html.EditorFor(model => model.NumEndereco, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.NumEndereco, "", new { @class = "text-danger" })
                     </div>
@@ -121,7 +121,7 @@
                 </div>
             </div>
         </div>
-    } 
+    }
 </div>
- 
+
 

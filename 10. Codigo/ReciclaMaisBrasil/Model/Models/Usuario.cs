@@ -20,7 +20,6 @@ namespace Model.Models
 
         [Required]
         [Display(Name = "CEP :")]
-        [StringLength(100)]
         public int Cep { get; set; }
 
         [Required]

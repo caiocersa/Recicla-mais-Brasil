@@ -45,7 +45,7 @@ namespace ReciclaMaisBrasil.Controllers
                 if (ModelState.IsValid)
                 {
                     gerenciador.Adicionar(instituicao);
-                    return RedirectToAction("Mostrar");   
+                    return RedirectToAction("Index","Home");   
                 }
             }
             catch

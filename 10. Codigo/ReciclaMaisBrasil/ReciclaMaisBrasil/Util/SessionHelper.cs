@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ReciclaMaisBrasil.Util
 {
-    public enum SessionKeys { PESSOA }
+    public enum SessionKeys { PESSOA, INSTITUICAO }
 
     public static class SessionHelper
     {
