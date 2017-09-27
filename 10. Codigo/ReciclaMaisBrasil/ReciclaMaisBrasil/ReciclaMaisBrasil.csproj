@@ -155,6 +155,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\AuthenticatedAttribute.cs" />
+    <Compile Include="Util\Criptografia.cs" />
+    <Compile Include="Util\CustomAuthorizeAttribute.cs" />
     <Compile Include="Util\SessionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,11 +202,14 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\markerclusterer.js" />
+    <Content Include="Scripts\mascaracpf.js" />
+    <Content Include="Scripts\mascaratelefone.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -225,17 +231,17 @@
     <Content Include="Views\Pessoa\Create.cshtml" />
     <Content Include="Views\Home\Cadastro.cshtml" />
     <Content Include="Views\Pessoa\List.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\HistoricoUsuario\Index.cshtml" />
     <Content Include="Views\HistoricoUsuario\Pontuacao.cshtml" />
     <Content Include="Views\Pessoa\Edit.cshtml" />
     <Content Include="Views\Instituicao\Create.cshtml" />
     <Content Include="Views\Instituicao\Mostrar.cshtml" />
     <Content Include="Views\HistoricoInstituicao\Index.cshtml" />
+    <Content Include="Views\Solicitar\Create.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Solicitar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

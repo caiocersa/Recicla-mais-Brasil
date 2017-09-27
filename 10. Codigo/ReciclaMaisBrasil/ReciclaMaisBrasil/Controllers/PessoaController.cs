@@ -2,13 +2,15 @@
 using Negocio.Business;
 using Model.Models;
 using ReciclaMaisBrasil.Util;
+using Model.Models.Exceptions;
+using System;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class PessoaController : Controller
     {
         private GerenciadorPessoa gerenciador;
-        Pessoa user = (Pessoa) SessionHelper.Get(SessionKeys.PESSOA);
+        Pessoa user = (Pessoa) SessionHelper.Get(SessionKeys.USUARIO);
         
 
         public PessoaController()
@@ -42,15 +44,14 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    gerenciador.Adicionar(pessoa);
-                    //Inserindo cadastrado na Sessão RETIRAR DEPOIS
-                    SessionHelper.Set(0, pessoa);
+                    pessoa.NvAcesso = 0;
+                    gerenciador.Adicionar(pessoa);                   
                     return RedirectToAction("Index","Home");
                 }
             }
-            catch
+            catch (Exception e)
             {
-
+                throw new ControllerException("Cadastro não realizado, falha ao adicionar os campos. ", e);
             }
             return View();
         }
@@ -74,7 +75,7 @@ namespace ReciclaMaisBrasil.Controllers
                 if(ModelState.IsValid)
                 {
                     gerenciador.Editar(usuario);
-                    SessionHelper.Set(SessionKeys.PESSOA, usuario);
+                    SessionHelper.Set(SessionKeys.USUARIO, usuario);
                     return RedirectToAction("Index", "HistoricoUsuario");
                 }
 

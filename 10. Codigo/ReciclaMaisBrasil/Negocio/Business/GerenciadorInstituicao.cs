@@ -42,6 +42,12 @@ namespace Negocio.Business
             {
                 return persistencia.ObterTodos();
             }
-        
+
+            public Instituicao ObterByLoginSenha(string login, string senha)
+            {
+                return persistencia.Obter(e => e.DocInstituicao.ToLowerInvariant().Equals(login.ToLowerInvariant()) &&
+                    e.PwInstituicao.ToLowerInvariant().Equals(senha.ToLowerInvariant()));
+            }
+
     }
 }

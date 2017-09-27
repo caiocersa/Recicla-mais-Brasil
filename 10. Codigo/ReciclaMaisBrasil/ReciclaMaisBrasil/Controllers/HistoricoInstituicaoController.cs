@@ -12,7 +12,7 @@ namespace ReciclaMaisBrasil.Controllers
     public class HistoricoInstituicaoController : Controller
     {
 
-        Instituicao inst = (Instituicao)SessionHelper.Get(SessionKeys.INSTITUICAO);
+        Instituicao inst = (Instituicao)SessionHelper.Get(SessionKeys.USUARIO);
 
         // GET: HistoricoInstituicao
         public ActionResult Index()

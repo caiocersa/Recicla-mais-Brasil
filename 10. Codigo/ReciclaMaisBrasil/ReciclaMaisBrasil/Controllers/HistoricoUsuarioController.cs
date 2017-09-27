@@ -7,7 +7,7 @@ namespace ReciclaMaisBrasil.Controllers
 {
     public class HistoricoUsuarioController : Controller
     {
-        Pessoa user = (Pessoa)SessionHelper.Get(SessionKeys.PESSOA);
+        Instituicao user = (Instituicao) SessionHelper.Get(SessionKeys.USUARIO);
         // GET: HistoricoUsuario
 
         public ActionResult Index()
@@ -56,7 +56,6 @@ namespace ReciclaMaisBrasil.Controllers
             try
             {
                 // TODO: Add update logic here
-
                 return RedirectToAction("Index");
             }
             catch
@@ -94,7 +93,7 @@ namespace ReciclaMaisBrasil.Controllers
 
         public ActionResult Pontuacao()
         {
-            Usuario user = (Usuario) SessionHelper.Get(SessionKeys.PESSOA);
+            
             return PartialView(user);
         }
 

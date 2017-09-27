@@ -41,11 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Account\AccountModel.cs" />
+    <Compile Include="Models\Exceptions\AplicacaoException.cs" />
+    <Compile Include="Models\Exceptions\ControllerException.cs" />
+    <Compile Include="Models\Exceptions\ModelException.cs" />
+    <Compile Include="Models\Exceptions\NegocioException.cs" />
+    <Compile Include="Models\Exceptions\PersistenceException.cs" />
     <Compile Include="Models\Instituicao.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\SolicitacaoColeta.cs" />
+    <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\EDMX\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

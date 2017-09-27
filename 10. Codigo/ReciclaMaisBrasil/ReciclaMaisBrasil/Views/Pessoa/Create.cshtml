@@ -26,7 +26,7 @@
                 </div>
                 @Html.LabelFor(model => model.CpfPessoa, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-4">
-                    @Html.EditorFor(model => model.CpfPessoa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.CpfPessoa, new { htmlAttributes = new { @class = "form-control", @OnKeyPress = "formatar('###.###.###-##', this)", @maxlength = "14" } })
                     @Html.ValidationMessageFor(model => model.CpfPessoa, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     @Html.EditorFor(model => model.PwPessoa, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.PwPessoa, "", new { @class = "text-danger" })
                 </div>
-                @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2",  })
                 <div class="col-md-4">
                     @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
@@ -128,5 +128,4 @@
 }
         </div>
 </div>
-
 

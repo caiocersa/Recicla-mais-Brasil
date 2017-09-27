@@ -18,8 +18,6 @@ namespace Model.Models
         public string NmInstituicao { get; set; }
         [Display(Name = "Responsável")]
         public string NmResponsavel { get; set; }
-        
-
         public int NumColeta { get; set; }
 
         public Instituicao(int IdUsuario, string Email)

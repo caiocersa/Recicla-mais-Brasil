@@ -38,10 +38,6 @@ namespace Model.Models
         [Display(Name = "Sua Pontuação:")]
         public int Pontuacao { get; set; }
 
-        public int NvAcesso { get; set; }
-
-
-
         public Pessoa(int IdUsuario, string Email)
         {
             this.IdUsuario = IdUsuario;

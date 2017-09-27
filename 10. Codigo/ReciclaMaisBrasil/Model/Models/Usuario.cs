@@ -55,8 +55,9 @@ namespace Model.Models
         [Display(Name = "Complemento :")]
         [StringLength(2, MinimumLength = 2)]
         public string Complemento { get; set; }
-        
 
+
+        public int NvAcesso { get; set; }
 
         public Usuario(int IdUsuario, string Email)
         {

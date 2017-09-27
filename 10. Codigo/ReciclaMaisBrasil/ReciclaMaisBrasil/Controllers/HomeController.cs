@@ -5,12 +5,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Model.Models;
+using Model.Models.Account;
 using Negocio.Business;
+using System.Web.Security;
+
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class HomeController : Controller
     {
+        private GerenciadorPessoa gerenciadorP;
+        private GerenciadorInstituicao gerenciadorI;
+
         public ActionResult Index()
         {
             return View();
@@ -23,24 +29,51 @@ namespace ReciclaMaisBrasil.Controllers
 
         public ActionResult Login()
         {
-            Pessoa p = new Pessoa();
-            p.IdUsuario = 0;
-            p.NmPessoa = "Caio César Alves de Souza";
-            p.NumEndereco = 129;
-            p.NmEndereco = "Bejamin Constant";
-            p.Pontuacao = 20000;
-            p.CpfPessoa = "109.005.964-73";
-            p.Cep = 4444444;
-            p.Cidade = "Itabaiana";
-            p.Bairro = "Centro";
-            p.DtNasc = DateTime.Now;
-            p.TpLogarouro = "Rua";
-            p.Telefone = "(79)99122-4512";
-            p.Email = "caio_cersa_@hotmail.com";
-            p.Estado = "SE";
-            SessionHelper.Set(0, p);
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel dadosLogin)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    // Obtendo o usuário.
+                    dadosLogin.Senha = Criptografia.GerarHashSenha(dadosLogin.Login + dadosLogin.Senha);
+                    Usuario usuario = gerenciadorP.ObterByLoginSenha(dadosLogin.Login, dadosLogin.Senha);
+                    if(usuario == null)
+                    {
+                        usuario = gerenciadorI.ObterByLoginSenha(dadosLogin.Login, dadosLogin.Senha);
+                    }
+                    
+                    // Autenticando.
+                    if (usuario != null )
+                    {
+                        if(typeof(Usuario) == usuario.GetType())
+                            FormsAuthentication.SetAuthCookie(((Pessoa) usuario).CpfPessoa, dadosLogin.LembrarMe);
+                        else
+                            FormsAuthentication.SetAuthCookie(((Instituicao) usuario).DocInstituicao, dadosLogin.LembrarMe);
 
-            return View("Index");
+                        SessionHelper.Set(SessionKeys.USUARIO, usuario);
+                        if (usuario.NvAcesso == ((int)Util.TipoUsuario.PESSOA) + 1)
+                            return RedirectToAction("Index", "HistoricoPessoa");
+                        else if (usuario.NvAcesso == ((int)Util.TipoUsuario.INSTITUICAO) + 1)
+                            return RedirectToAction("Index", "HistoricoInstituicao");
+                        else if (usuario.NvAcesso == ((int)Util.TipoUsuario.ADMCOMPRA) + 1)
+                            return RedirectToAction("Index", "AdmCompra");
+                        else if (usuario.NvAcesso == ((int)Util.TipoUsuario.ADM) + 1)
+                            return RedirectToAction("Index","Administrador");
+                    }
+                }
+                ModelState.AddModelError("", "Usuário e/ou senha inválidos.");
+            }
+            catch
+            {
+                ModelState.AddModelError("", "A autenticação falhou. Forneça informações válidas e tente novamente.");
+            }
+            return View();
         }
     }
+
 }

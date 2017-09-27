@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Business\GerenciadorInstituicao.cs" />
     <Compile Include="Business\GerenciadorPessoa.cs" />
+    <Compile Include="Business\GerenciadorSolicitacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

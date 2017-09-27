@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Persistence\InstituicaoPersistencia.cs" />
     <Compile Include="Persistence\PessoaPersistencia.cs" />
+    <Compile Include="Persistence\UsuarioPersistencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persistence\SolicitacaoPersistencia.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
