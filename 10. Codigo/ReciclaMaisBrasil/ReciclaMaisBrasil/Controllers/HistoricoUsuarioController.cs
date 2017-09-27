@@ -2,104 +2,53 @@
 using Model.Models;
 using ReciclaMaisBrasil.Util;
 using Jmelosegui.Mvc.GoogleMap;
+using System.Web.Security;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class HistoricoUsuarioController : Controller
     {
-        Instituicao user = (Instituicao) SessionHelper.Get(SessionKeys.USUARIO);
+        Pessoa user = (Pessoa) SessionHelper.Get(SessionKeys.USUARIO);
         // GET: HistoricoUsuario
 
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.PESSOA, MetodoAcao = "Index", Controladora = "HistoricoUsuario")]
         public ActionResult Index()
         {
             return View(user);
         }
 
-        // GET: HistoricoUsuario/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: HistoricoUsuario/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: HistoricoUsuario/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: HistoricoUsuario/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: HistoricoUsuario/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: HistoricoUsuario/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: HistoricoUsuario/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public ActionResult map()
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.PESSOA, MetodoAcao = "Map", Controladora = "HistoricoUsuario")]
+        public ActionResult Map()
         {
             return PartialView();
         }
 
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.PESSOA, MetodoAcao = "Pontuacao", Controladora = "HistoricoUsuario")]
         public ActionResult Pontuacao()
         {
             
             return PartialView(user);
         }
 
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.PESSOA, MetodoAcao = "ExibirHistorico", Controladora = "HistoricoUsuario")]
         public ActionResult ExibirHistorico()
         {
             return PartialView();
+        }
+
+        [Authenticated]
+        public ActionResult Logout()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                FormsAuthentication.SignOut();
+                Session.Abandon();
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

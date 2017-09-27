@@ -44,7 +44,8 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    pessoa.NvAcesso = 0;
+                    pessoa.PwPessoa = Criptografia.GerarHashSenha(pessoa.CpfPessoa + pessoa.PwPessoa);
+                    pessoa.NvAcesso = 1;
                     gerenciador.Adicionar(pessoa);                   
                     return RedirectToAction("Index","Home");
                 }

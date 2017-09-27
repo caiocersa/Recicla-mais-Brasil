@@ -16,6 +16,12 @@ namespace ReciclaMaisBrasil.Controllers
     {
         private GerenciadorPessoa gerenciadorP;
         private GerenciadorInstituicao gerenciadorI;
+        public HomeController()
+        {
+            gerenciadorP = new GerenciadorPessoa();
+            gerenciadorI = new GerenciadorInstituicao();
+        }
+
 
         public ActionResult Index()
         {
@@ -50,14 +56,14 @@ namespace ReciclaMaisBrasil.Controllers
                     // Autenticando.
                     if (usuario != null )
                     {
-                        if(typeof(Usuario) == usuario.GetType())
+                        if(typeof(Pessoa) == usuario.GetType())
                             FormsAuthentication.SetAuthCookie(((Pessoa) usuario).CpfPessoa, dadosLogin.LembrarMe);
                         else
                             FormsAuthentication.SetAuthCookie(((Instituicao) usuario).DocInstituicao, dadosLogin.LembrarMe);
 
                         SessionHelper.Set(SessionKeys.USUARIO, usuario);
                         if (usuario.NvAcesso == ((int)Util.TipoUsuario.PESSOA) + 1)
-                            return RedirectToAction("Index", "HistoricoPessoa");
+                            return RedirectToAction("Index", "HistoricoUsuario");
                         else if (usuario.NvAcesso == ((int)Util.TipoUsuario.INSTITUICAO) + 1)
                             return RedirectToAction("Index", "HistoricoInstituicao");
                         else if (usuario.NvAcesso == ((int)Util.TipoUsuario.ADMCOMPRA) + 1)

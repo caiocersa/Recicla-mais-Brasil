@@ -5,13 +5,11 @@ namespace Model.Models.Account
     public class LoginModel
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "O login é obrigatório.")]
-        [StringLength(11, MinimumLength = 11, ErrorMessage = "Deve possuir 11 digitos.")]
-        [RegularExpression(@"^[0 - 9]", ErrorMessage = "Digite um login válido. Use somente números.")]
+        [StringLength(14, MinimumLength = 14, ErrorMessage = "Deve possuir 11 digitos.")]
         public string Login { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "A senha é obrigatória.")]
-        [StringLength(35, MinimumLength = 5, ErrorMessage = "Deve possuir uma quantidade de caracteres entre 6 e 35.")]
-        [RegularExpression(@"^[a-zA-Z0-9_@#$%&]{5,100}$", ErrorMessage = "Digite uma senha válida. Use letras, números e os caracteres especiais _ @ # $ % &.")]
+        [StringLength(35, MinimumLength = 6, ErrorMessage = "Deve possuir uma quantidade de caracteres entre 6 e 35.")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
 

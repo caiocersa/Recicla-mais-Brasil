@@ -109,7 +109,7 @@
 }
 
 #body-fundo {
-    background-image: url(~/Images/background-site.png);
+    background-image: url(Images/background-site.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

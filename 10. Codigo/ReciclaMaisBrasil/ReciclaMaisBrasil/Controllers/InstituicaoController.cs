@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Model.Models;
 using Negocio.Business;
+using ReciclaMaisBrasil.Util;
+using Model.Models.Exceptions;
 
 namespace ReciclaMaisBrasil.Controllers
 {
@@ -44,13 +46,15 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    instituicao.PwInstituicao = Criptografia.GerarHashSenha(instituicao.DocInstituicao + instituicao.PwInstituicao);
+                    instituicao.NvAcesso = 2;
                     gerenciador.Adicionar(instituicao);
                     return RedirectToAction("Index","Home");   
                 }
             }
-            catch
+            catch (Exception e)
             {
-               
+                throw new ControllerException("Cadastro não realizado, falha ao adicionar os campos. ", e);
             }
             return View();
         }

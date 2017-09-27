@@ -11,7 +11,7 @@
     @using Model.Models;
 </head>
 @{ 
-    Pessoa pessoa = (Pessoa) SessionHelper.Get(SessionKeys.PESSOA);
+    Pessoa pessoa = (Pessoa) SessionHelper.Get(SessionKeys.USUARIO);
     
 
 }
@@ -25,12 +25,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav fonte-texto-menu" style="margin-bottom:5px;">
-                    <li>@Html.ActionLink("Historico", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Loja", "About", "Home")</li>
-                    <li>@Html.ActionLink("Formas de Reciclagem", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Historico", "Index", "HistoricoUsuario")</li>
+                    <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
+                    <li>@Html.ActionLink("Formas de Reciclagem", "Index", "FormasReciclagem")</li>
                     <li>@Html.ActionLink("Solicitar Coleta", "Create", "Solicitar")</li>
                     <li>@Html.ActionLink("Perfil", "Edit", new { controller="Pessoa", id = pessoa.IdUsuario}  )</li>
-                    <li>@Html.ActionLink("Sair", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sair", "Logout", "HistoricoUsuario")</li>
                     <li><a href="@Url.Action("Index","Home")"><img src="~/Content/Images/bell-icon.svg" id="bell-icon" /></a></li>
                 </ul>
             </div>

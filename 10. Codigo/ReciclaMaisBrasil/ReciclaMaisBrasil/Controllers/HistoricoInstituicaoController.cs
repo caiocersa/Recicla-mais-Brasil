@@ -14,87 +14,20 @@ namespace ReciclaMaisBrasil.Controllers
 
         Instituicao inst = (Instituicao)SessionHelper.Get(SessionKeys.USUARIO);
 
-        // GET: HistoricoInstituicao
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.INSTITUICAO, MetodoAcao = "Index", Controladora = "HistoricoInstituicao")]
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: HistoricoInstituicao/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: HistoricoInstituicao/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: HistoricoInstituicao/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.INSTITUICAO, MetodoAcao = "Pontuacao", Controladora = "HistoricoInstituicao")]
         public ActionResult Pontuacao()
         {
             return PartialView();
         }
 
-        // GET: HistoricoInstituicao/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: HistoricoInstituicao/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: HistoricoInstituicao/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: HistoricoInstituicao/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
