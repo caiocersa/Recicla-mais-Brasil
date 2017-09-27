@@ -28,9 +28,9 @@
                         @Html.EditorFor(model => model.NmInstituicao, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.NmInstituicao, "", new { @class = "text-danger" })
                     </div>
-                    @Html.LabelFor(model => model.DocInstituicao, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.DocInstituicao, htmlAttributes: new { @class = "control-label col-md-2", })
                     <div class="col-md-4">
-                        @Html.EditorFor(model => model.DocInstituicao, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.DocInstituicao, new { htmlAttributes = new { @class = "form-control", @OnKeyPress = "mascaraMutuario(this,cpfCnpj)",@maxLength = 18 } })
                         @Html.ValidationMessageFor(model => model.DocInstituicao, "", new { @class = "text-danger" })
                     </div>
                 </div>

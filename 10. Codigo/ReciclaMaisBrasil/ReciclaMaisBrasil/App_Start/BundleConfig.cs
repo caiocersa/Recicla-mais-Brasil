@@ -12,7 +12,8 @@ namespace ReciclaMaisBrasil
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery-ui.min.js",
                         "~/Scripts/mascaracpf.js",
-                        "~/Scripts/jquery.mask.min.js"));
+                        "~/Scripts/jquery.mask.min.js",
+                        "~/Scripts/Autenticacao.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

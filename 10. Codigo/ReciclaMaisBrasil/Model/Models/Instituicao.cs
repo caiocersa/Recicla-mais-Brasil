@@ -11,6 +11,7 @@ namespace Model.Models
     {
         [Required]
         [Display(Name = "CPF/CNPJ")]
+        [StringLength(18,MinimumLength =14)]
         public string DocInstituicao { get; set; } //Documento = CPF OU CNPJ
         [Display(Name = "Senha")]
         public string PwInstituicao { get; set; } //Senha

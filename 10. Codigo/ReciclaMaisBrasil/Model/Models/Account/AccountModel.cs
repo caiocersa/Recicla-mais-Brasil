@@ -5,7 +5,7 @@ namespace Model.Models.Account
     public class LoginModel
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "O login é obrigatório.")]
-        [StringLength(14, MinimumLength = 14, ErrorMessage = "Deve possuir 11 digitos.")]
+        [StringLength(18, MinimumLength = 14, ErrorMessage = "Deve possuir 11 ou 14 digitos.")]
         public string Login { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "A senha é obrigatória.")]

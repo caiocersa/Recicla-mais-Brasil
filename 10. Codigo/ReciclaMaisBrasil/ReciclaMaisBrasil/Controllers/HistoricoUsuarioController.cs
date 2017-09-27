@@ -12,7 +12,7 @@ namespace ReciclaMaisBrasil.Controllers
         // GET: HistoricoUsuario
 
         [Authenticated]
-        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.PESSOA, MetodoAcao = "Index", Controladora = "HistoricoUsuario")]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.PESSOA, MetodoAcao = "Index", Controladora = "Home")]
         public ActionResult Index()
         {
             return View(user);

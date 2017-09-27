@@ -20,10 +20,3 @@ C:\Users\Marcos Neto\Desktop\ReciclaMaisBrasil\Recicla-mais-Brasil\10. Codigo\Re
 C:\Users\Marcos Neto\Desktop\ReciclaMaisBrasil\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\Marcos Neto\Desktop\ReciclaMaisBrasil\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\Marcos Neto\Desktop\ReciclaMaisBrasil\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\bin\Debug\Persistencia.dll
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\bin\Debug\Persistencia.pdb
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\bin\Debug\Model.dll
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\bin\Debug\Model.pdb
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\obj\Debug\Persistencia.dll
-C:\Users\caio_\Desktop\Repositorio Local\Recicla-mais-Brasil\10. Codigo\ReciclaMaisBrasil\Persistencia\obj\Debug\Persistencia.pdb
