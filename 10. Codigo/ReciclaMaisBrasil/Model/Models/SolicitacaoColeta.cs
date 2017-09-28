@@ -13,11 +13,9 @@ namespace Model.Models
         [Display(Name = "ID Solicitação:")]
         public int IdSolicitacao { get; set; }
 
-        [Key]
         [Display(Name = "ID Pessoa:")]
         public int IdPessoa { get; set; }
 
-        [Key]
         [Display(Name = "ID Instituição:")]
         public int IdInstituicao { get; set; }
 
@@ -31,7 +29,7 @@ namespace Model.Models
         public string Reciclavel { get; set; }
         
         [Required]
-        [Display(Name = "Descrição do Reciclavel:")]
+        [Display(Name = "Descrição:")]
         [StringLength(maximumLength:100)]
         public string DescReciclavel { get; set; }
 

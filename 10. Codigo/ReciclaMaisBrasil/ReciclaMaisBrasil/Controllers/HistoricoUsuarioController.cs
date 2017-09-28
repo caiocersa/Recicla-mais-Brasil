@@ -6,6 +6,7 @@ using System.Web.Security;
 
 namespace ReciclaMaisBrasil.Controllers
 {
+
     public class HistoricoUsuarioController : Controller
     {
         Pessoa user = (Pessoa) SessionHelper.Get(SessionKeys.USUARIO);

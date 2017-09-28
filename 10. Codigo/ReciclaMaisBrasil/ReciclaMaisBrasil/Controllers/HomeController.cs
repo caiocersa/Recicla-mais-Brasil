@@ -56,8 +56,8 @@ namespace ReciclaMaisBrasil.Controllers
                     // Autenticando.
                     if (usuario != null )
                     {
-                        if(typeof(Pessoa) == usuario.GetType())
-                            FormsAuthentication.SetAuthCookie(((Pessoa) usuario).CpfPessoa, dadosLogin.LembrarMe);
+                        if (typeof(Pessoa) == usuario.GetType())
+                            FormsAuthentication.SetAuthCookie(((Pessoa)usuario).CpfPessoa, dadosLogin.LembrarMe);
                         else
                             FormsAuthentication.SetAuthCookie(((Instituicao) usuario).DocInstituicao, dadosLogin.LembrarMe);
 

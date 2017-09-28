@@ -12,6 +12,7 @@ namespace ReciclaMaisBrasil.Controllers
     public class SolicitarController : Controller
     {
         GerenciadorSolicitacao gerenciador = new GerenciadorSolicitacao();
+        GerenciadorInstituicao gerenciadorI = new GerenciadorInstituicao();
         Pessoa user = (Pessoa)SessionHelper.Get(SessionKeys.USUARIO);
         // GET: Solicitar
         public ActionResult Index()
@@ -28,6 +29,10 @@ namespace ReciclaMaisBrasil.Controllers
         // GET: Solicitar/Create
         public ActionResult Create()
         {
+            Reciclavel tp = new Reciclavel();
+            ViewBag.TipoReciclavel = new SelectList(tp.tpReciclavel);
+            ViewBag.Instituicao = new SelectList(gerenciadorI.ObterTodosInstituicao(), "IdUsuario","NmInstituicao");
+            
             return View();
         }
 
@@ -37,9 +42,10 @@ namespace ReciclaMaisBrasil.Controllers
         {
             try
             {
+
                 if (ModelState.IsValid)
                 {
-
+                    
                     solicitacao.Status = 0;
                     solicitacao.IdPessoa = user.IdUsuario;
                     solicitacao.DtAbertura = DateTime.Now;

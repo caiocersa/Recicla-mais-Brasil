@@ -19,6 +19,7 @@ namespace Persistencia.Persistence
         public SolicitacaoColeta Adicionar(SolicitacaoColeta solicitacao)
         {
             solicitacao.IdSolicitacao = listaSolicitacoes.Count + 1;
+            solicitacao.CodSolicitacao = listaSolicitacoes.Count + 1;
             listaSolicitacoes.Add(solicitacao);
             return solicitacao;
         }
