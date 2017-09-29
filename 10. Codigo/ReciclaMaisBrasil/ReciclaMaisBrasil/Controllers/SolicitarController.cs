@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Model.Models;
 using Negocio.Business;
 using ReciclaMaisBrasil.Util;
+using System.IO;
 
 namespace ReciclaMaisBrasil.Controllers
 {
@@ -29,8 +30,8 @@ namespace ReciclaMaisBrasil.Controllers
         // GET: Solicitar/Create
         public ActionResult Create()
         {
-            Reciclavel tp = new Reciclavel();
-            ViewBag.TipoReciclavel = new SelectList(tp.tpReciclavel);
+            TpReciclavel tp = new TpReciclavel();
+            ViewBag.TipoReciclavel = new SelectList(tp.Reciclavel,"Reciclavel", "Reciclavel");
             ViewBag.Instituicao = new SelectList(gerenciadorI.ObterTodosInstituicao(), "IdUsuario","NmInstituicao");
             
             return View();
@@ -38,17 +39,24 @@ namespace ReciclaMaisBrasil.Controllers
 
         // POST: Solicitar/Create
         [HttpPost]
-        public ActionResult Create([Bind(Exclude = "IdSolicitacao, CodSolicitacao, DtAbertura, DtEmAndamento,Status")]SolicitacaoColeta solicitacao)
+        public ActionResult Create([Bind(Exclude = "IdSolicitacao, CodSolicitacao, DtAbertura, DtEmAndamento,Status")]SolicitacaoColeta solicitacao, HttpPostedFileBase imagem)
         {
             try
             {
-
+                byte[] arrayImagem = null;
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    imagem.InputStream.CopyTo(memoryStream);
+                    arrayImagem = memoryStream.ToArray();
+                }
+                                    solicitacao.FotoReciclavel = arrayImagem;
                 if (ModelState.IsValid)
                 {
-                    
+
                     solicitacao.Status = 0;
                     solicitacao.IdPessoa = user.IdUsuario;
                     solicitacao.DtAbertura = DateTime.Now;
+
                     gerenciador.Adicionar(solicitacao);
                     return RedirectToAction("Index","HistoricoUsuario");
                 }

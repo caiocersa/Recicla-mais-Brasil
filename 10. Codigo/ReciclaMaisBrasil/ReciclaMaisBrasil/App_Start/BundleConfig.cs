@@ -11,9 +11,11 @@ namespace ReciclaMaisBrasil
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery-ui.min.js",
+                        "~/Scripts/jquery-ui.js",
                         "~/Scripts/mascaracpf.js",
                         "~/Scripts/jquery.mask.min.js",
-                        "~/Scripts/Autenticacao.js"));
+                        "~/Scripts/Autenticacao.js",
+                        "~/Scripts/dhtmlxCalendar_v51_std/codebase/dhtmlxcalendar.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -31,7 +33,10 @@ namespace ReciclaMaisBrasil
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/jquery-ui.min.css",
-                      "~/Content/ReciclaStyle.css"));
+                      "~/Content/ReciclaStyle.css",
+                      "~/Scripts/dhtmlxscheduler/dhtmlxsheduler_classic.css,",
+                      "~/Scripts/dhtmlxCalendar_v51_std/codebase/fonts/font_roboto/roboto.css,",
+                       "~/Scripts/dhtmlxCalendar_v51_std/codebase/dhtmlxcalendar.css"));
         }
     }
 }

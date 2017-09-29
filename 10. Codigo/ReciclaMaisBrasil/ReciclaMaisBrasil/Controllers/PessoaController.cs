@@ -132,18 +132,20 @@ namespace ReciclaMaisBrasil.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                  if(user.PwPessoa == senhaModel.SenhaAtual) //Verificar se a senha nova é igual a senha da sessão
+                    senhaModel.NovaSenha = Criptografia.GerarHashSenha(user.CpfPessoa + senhaModel.NovaSenha);
+                    senhaModel.SenhaAtual = Criptografia.GerarHashSenha(user.CpfPessoa + senhaModel.SenhaAtual);
+                  if(user.PwPessoa == senhaModel.SenhaAtual && senhaModel.NovaSenha != user.PwPessoa) //Verificar se a senha nova é igual a senha da sessão
                     {
                         user.PwPessoa = senhaModel.NovaSenha;//Criptografar a senha
                         gerenciador.Editar(user);
-                        RedirectToAction("Index","HistoricoUsuario");
+                        return RedirectToAction("Index","HistoricoUsuario");
                     }
                 }
             }catch
             {
                 
             }
-            return View("EditSenha","HistoricoUsuario");
+            return View("EditSenha","Pessoa");
         }
     }
 }

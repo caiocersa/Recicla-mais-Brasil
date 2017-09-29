@@ -38,7 +38,7 @@ namespace Model.Models
         [Required]
         [DataType(DataType.Url)]
         [Display(Name = "Foto:")]
-        public byte FotoReciclavel { get; set; }
+        public byte[] FotoReciclavel { get; set; }
 
         [Required]
         [Display(Name = "Tipo de Solicitação:")]

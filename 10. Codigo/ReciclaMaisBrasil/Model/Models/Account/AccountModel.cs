@@ -23,19 +23,19 @@ namespace Model.Models.Account
         [StringLength(35, ErrorMessage = "A senha deve possuir, pelo menos, 6 caracteres em seu tamanho.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [RegularExpression(@"^[a-zA-Z0-9_@#$%&]{5,100}$", ErrorMessage = "Digite uma senha válida. Use letras, números e os caracteres especiais _ @ # $ % &.")]
-        [Display(Name = "Senha Atual")]
+        [Display(Name = "Senha Atual:")]
         public string SenhaAtual { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Nova senha é obrigatória.")]
         [StringLength(35, ErrorMessage = "A senha deve possuir, pelo menos, 6 caracteres em seu tamanho.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [RegularExpression(@"^[a-zA-Z0-9_@#$%&]{5,100}$", ErrorMessage = "Digite uma senha válida. Use letras, números e os caracteres especiais _ @ # $ % &.")]
-        [Display(Name = "Nova Senha")]
+        [Display(Name = "Nova Senha:")]
         public string NovaSenha { get; set; }
 
         [Required(ErrorMessage = "Senha de confirmação é obrigatória.")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirme a Nova Senha")]
+        [Display(Name = "Confirme a Nova Senha:")]
         [System.ComponentModel.DataAnnotations.Compare("NovaSenha", ErrorMessage = "A nova senha e sua confirmação não são correspondentes.")]
         public string ConfirmaNovaSenha { get; set; }
     }
