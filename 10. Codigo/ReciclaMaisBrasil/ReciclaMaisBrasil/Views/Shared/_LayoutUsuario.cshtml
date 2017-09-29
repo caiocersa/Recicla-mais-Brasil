@@ -19,8 +19,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top" style="position:static;margin-bottom:5px;">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" style="width:180px; height:80px; padding:7px 15px">
-                    <img src="~/Content/Images/logo-nav-top.svg" alt="Brand" style="width:150px;height:67.69px;">
+                <a class="navbar-brand" href="@Url.Action("Index","HistoricoUsuario")" style="width:180px; height:80px; padding:7px 15px">
+                    <img src=@Url.Content("~/Content/Images/logo-nav-top.svg")  alt="Brand" style="width:150px;height:67.69px;">
                 </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -29,9 +29,16 @@
                     <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
                     <li>@Html.ActionLink("Formas de Reciclagem", "Index", "FormasReciclagem")</li>
                     <li>@Html.ActionLink("Solicitar Coleta", "Create", "Solicitar")</li>
-                    <li>@Html.ActionLink("Perfil", "Edit", new { controller="Pessoa", id = pessoa.IdUsuario}  )</li>
-                    <li>@Html.ActionLink("Sair", "Logout", "HistoricoUsuario")</li>
-                    <li><a href="@Url.Action("Index","Home")"><img src="~/Content/Images/bell-icon.svg" id="bell-icon" /></a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Perfil <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Alterar Perfil", "Edit", "Pessoa")</li>
+                            <li>@Html.ActionLink("Alterar Senha", "EditSenha", "Pessoa")</li>
+                        </ul>
+<li>@Html.ActionLink("Sair", "Logout", "HistoricoUsuario")</li>
+                    <li><a href="@Url.Action("Index","Home")"><img src=@Url.Content("~/Content/Images/bell-icon.svg") id="bell-icon" /></a></li>
                 </ul>
             </div>
         </div>

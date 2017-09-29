@@ -14,9 +14,11 @@ namespace Model.Models
         public int IdSolicitacao { get; set; }
 
         [Display(Name = "ID Pessoa:")]
+        [Required]
         public int IdPessoa { get; set; }
 
-        [Display(Name = "ID Instituição:")]
+        [Display(Name = "Instituição:")]
+        [Required]
         public int IdInstituicao { get; set; }
 
         [Key]
@@ -53,6 +55,7 @@ namespace Model.Models
         public DateTime DtAbertura { get; set; }
 
         [Display(Name = "Data em Andamento:")]
+        [DataType(DataType.DateTime)]
         public DateTime DtEmAndamento { get; set; }
 
         public SolicitacaoColeta(int IdSolicitacao, int CodSolicitacao)

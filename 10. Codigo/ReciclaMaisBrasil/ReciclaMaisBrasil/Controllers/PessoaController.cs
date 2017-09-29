@@ -4,6 +4,7 @@ using Model.Models;
 using ReciclaMaisBrasil.Util;
 using Model.Models.Exceptions;
 using System;
+using Model.Models.Account;
 
 namespace ReciclaMaisBrasil.Controllers
 {
@@ -61,7 +62,6 @@ namespace ReciclaMaisBrasil.Controllers
         public ActionResult Edit()
         {
 
-
             return View(user);
             
         }
@@ -118,6 +118,32 @@ namespace ReciclaMaisBrasil.Controllers
         public ActionResult teste()
         {
             return View();
+        }
+
+        public ActionResult EditSenha()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditSenha(SenhasModel senhaModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                  if(user.PwPessoa == senhaModel.SenhaAtual) //Verificar se a senha nova é igual a senha da sessão
+                    {
+                        user.PwPessoa = senhaModel.NovaSenha;//Criptografar a senha
+                        gerenciador.Editar(user);
+                        RedirectToAction("Index","HistoricoUsuario");
+                    }
+                }
+            }catch
+            {
+                
+            }
+            return View("EditSenha","HistoricoUsuario");
         }
     }
 }

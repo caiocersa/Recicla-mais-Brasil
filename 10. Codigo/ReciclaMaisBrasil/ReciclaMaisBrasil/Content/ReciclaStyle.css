@@ -1,4 +1,10 @@
 ﻿
+.margem-conteudo-solicitacao {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
 #primeiro {
     background-image: url(Images/fundo-primeiro.svg);
     background-repeat: no-repeat;
@@ -163,10 +169,10 @@
 }
 
 #box-pontuacao {
-    height: 202px !important;
+    height: 150px !important;
     margin: 0px 2px 10px 2px;
     background-color: #006633;
-    padding-top: 75px;
+    padding-top: 25px;
     font-size: x-large;
     color: white;
 }

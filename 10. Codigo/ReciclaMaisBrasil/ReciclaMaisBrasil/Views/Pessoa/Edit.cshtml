@@ -44,11 +44,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PwPessoa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.PwPessoa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PwPessoa, "", new { @class = "text-danger" })
-            </div>
             @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
                 @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
