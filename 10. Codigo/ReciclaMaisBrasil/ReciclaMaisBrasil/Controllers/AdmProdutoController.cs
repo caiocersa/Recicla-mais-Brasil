@@ -104,7 +104,7 @@ namespace ReciclaMaisBrasil.Controllers
 
         public ActionResult List()
         {
-            return View(gerenciadoraP.ObterTodosAdm);
+            return View(gerenciadoraP.ObterTodosAdm(user.IdUsuario));
         }
     }
 }
