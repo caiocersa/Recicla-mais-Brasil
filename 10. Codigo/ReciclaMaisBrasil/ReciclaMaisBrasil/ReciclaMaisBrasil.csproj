@@ -145,6 +145,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmProdutoController.cs" />
     <Compile Include="Controllers\HistoricoInstituicaoController.cs" />
     <Compile Include="Controllers\HistoricoUsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -164,6 +165,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Images\background-site.png" />
     <Content Include="Content\Images\bell-icon.svg" />
+    <Content Include="Content\Images\btn-alterar-cadastro.svg" />
+    <Content Include="Content\Images\btn-cadastrar-produto.svg" />
+    <Content Include="Content\Images\btn-entrega-produto.svg" />
     <Content Include="Content\Images\cadastro\buttom-inst-cadastro.svg" />
     <Content Include="Content\Images\cadastro\buttom-user-cadastro.svg" />
     <Content Include="Content\Images\facebook-icon.svg" />
@@ -196,6 +200,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\Gotham Bold.otf" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jmelosegui.googlemap.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -240,6 +245,10 @@
     <Content Include="Views\HistoricoInstituicao\Index.cshtml" />
     <Content Include="Views\Solicitar\Create.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Pessoa\EditSenha.cshtml" />
+    <Content Include="Views\AdmProduto\Index.cshtml" />
+    <Content Include="Views\AdmProduto\Create.cshtml" />
+    <Content Include="Views\AdmProduto\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

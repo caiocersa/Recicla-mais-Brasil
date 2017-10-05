@@ -31,7 +31,7 @@ namespace ReciclaMaisBrasil.Controllers
         public ActionResult Create()
         {
             TpReciclavel tp = new TpReciclavel();
-            ViewBag.TipoReciclavel = new SelectList(tp.Reciclavel,"Reciclavel", "Reciclavel");
+            ViewBag.TipoReciclavel = new SelectList(tp.Reciclavel);
             ViewBag.Instituicao = new SelectList(gerenciadorI.ObterTodosInstituicao(), "IdUsuario","NmInstituicao");
             
             return View();
@@ -39,7 +39,7 @@ namespace ReciclaMaisBrasil.Controllers
 
         // POST: Solicitar/Create
         [HttpPost]
-        public ActionResult Create([Bind(Exclude = "IdSolicitacao, CodSolicitacao, DtAbertura, DtEmAndamento,Status")]SolicitacaoColeta solicitacao, HttpPostedFileBase imagem)
+        public ActionResult Create([Bind(Exclude = "IdSolicitacao, CodSolicitacao, DtAbertura, DtEmAndamento,Status")]SolicitacaoColeta solicitacao, HttpPostedFile imagem)
         {
             try
             {

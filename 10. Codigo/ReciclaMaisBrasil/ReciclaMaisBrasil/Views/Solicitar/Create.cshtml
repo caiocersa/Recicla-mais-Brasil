@@ -1,10 +1,10 @@
 ﻿@model Model.Models.SolicitacaoColeta
-
+@using Model.Models
+@using Negocio.Business
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutUsuario.cshtml";
-    var tp = ViewBag.TipoReciclavel;
-    var tp2 = ViewBag.TipoReciclavel;
+
 }
 
 
@@ -25,7 +25,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Reciclavel, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Reciclavel, (SelectList) ViewBag.TipoReciclavel, htmlAttributes : new { @class = "form-control" })
+                        @Html.DropDownListFor(model => model.Reciclavel,(SelectList) ViewBag.TipoReciclavel , htmlAttributes : new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Reciclavel, "", new { @class = "text-danger" })
                     </div>
                 </div>

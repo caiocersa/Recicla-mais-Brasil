@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSemMenu.cshtml";
+}
+<div class="row row-centered " >
+    <div class="col-centered">
+        <a href="@Url.Action("Index","AdmProduto")">
+            <img href="@Url.Action("Index","AdmProduto")" src=@Url.Content("~/Content/Images/logo-nav-top.svg") style="height:200px;width: 200px;" />
+        </a>
+    </div>
+
+
+    
+</div>
+<div class="row row-centered">
+    <div class="col-md-3 col-centered" id="btn-cadastrar-produto">
+        <a href="@Url.Action("Create","AdmProduto")">
+            <img href="@Url.Action("Create","Produto")" src=@Url.Content("~/Content/Images/btn-cadastrar-produto.svg") style="height: 200px;width: 200px;" />
+       </a>
+</div>
+    <div class="col-md-3 col-centered" id="btn-cadastrar-produto">
+        <a href="@Url.Action("Entregar","AdmProduto")">
+            <img href="@Url.Action("Entregar","Produto")" src=@Url.Content("~/Content/Images/btn-entrega-produto.svg") style="height: 200px;width: 200px;" />
+        </a>
+</div>
+    <div class="col-md-3 col-centered" id="btn-cadastrar-produto">
+        <a href="@Url.Action("Edit","Pessoa")">
+            <img href="@Url.Action("Edit","Pessoa")" src=@Url.Content("~/Content/Images/btn-alterar-cadastro.svg") style="height: 200px;width: 200px;" />
+            </a>
+</div>
+</div>
+
+    <div class="row row-centered ">
+        <ul class="nav navbar-nav fonte-texto-menu col-centered">
+            <li>@Html.ActionLink("Sair", "Logout", "Usuario")</li>
+        </ul>
+    </div>

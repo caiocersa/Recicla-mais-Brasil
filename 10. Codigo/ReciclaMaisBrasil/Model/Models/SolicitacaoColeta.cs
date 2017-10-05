@@ -40,6 +40,7 @@ namespace Model.Models
         [Display(Name = "Foto:")]
         public byte[] FotoReciclavel { get; set; }
 
+
         [Required]
         [Display(Name = "Tipo de Solicitação:")]
         public char TpSolicitacao { get; set; }
