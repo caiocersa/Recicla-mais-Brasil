@@ -13,47 +13,47 @@ namespace Model.Models
         public int IdUsuario { get; set; }
 
         [Required]
-        [Display(Name = "Email :")]
+        [Display(Name = "Email: ")]
         [StringLength(100)]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "CEP :")]
+        [Display(Name = "CEP: ")]
         public int Cep { get; set; }
 
         [Required]
-        [Display(Name = "Logadouro :")]
+        [Display(Name = "Logadouro: ")]
         [StringLength(4)]
         public string TpLogarouro { get; set; }
 
         [Required]
-        [Display(Name = "Bairro :")]
+        [Display(Name = "Bairro: ")]
         [StringLength(100)]
         public string Bairro { get; set; }
 
         [Required]
-        [Display(Name = "Endereço :")]
+        [Display(Name = "Endereço: ")]
         [StringLength(100)]
         public string NmEndereco { get; set; }
 
         [Required]
-        [Display(Name = "Cidade :")]
+        [Display(Name = "Cidade: ")]
         [StringLength(100)]
         public string Cidade { get; set; }
 
         [Required]
-        [Display(Name = "Estado :")]
+        [Display(Name = "Estado: ")]
         [StringLength(2,MinimumLength = 2)]
         public string Estado { get; set; }
 
         [Required]
-        [Display(Name = "Numero :")]
+        [Display(Name = "Numero: ")]
         public int NumEndereco { get; set; }
 
         
-        [Display(Name = "Complemento :")]
-        [StringLength(2, MinimumLength = 2)]
+        [Display(Name = "Complemento: ")]
+        [StringLength(12, MinimumLength = 2)]
         public string Complemento { get; set; }
 
 

@@ -18,14 +18,14 @@ namespace ReciclaMaisBrasil.Controllers
         [CustomAuthorize(NivelAcesso = Util.TipoUsuario.INSTITUICAO, MetodoAcao = "Index", Controladora = "HistoricoInstituicao")]
         public ActionResult Index()
         {
-            return View();
+            return View(inst);
         }
 
         [Authenticated]
         [CustomAuthorize(NivelAcesso = Util.TipoUsuario.INSTITUICAO, MetodoAcao = "Pontuacao", Controladora = "HistoricoInstituicao")]
-        public ActionResult Pontuacao()
+        public ActionResult Coletas()
         {
-            return PartialView();
+            return PartialView(inst);
         }
 
 

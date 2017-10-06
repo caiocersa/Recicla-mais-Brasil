@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="margin:0px;">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="position:static;">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="" style="width:180px; height:80px; padding:7px 15px">
@@ -21,8 +21,15 @@
                     <li>@Html.ActionLink("Histórico", "Index", "Home")</li>
                     <li>@Html.ActionLink("Validar Coleta", "About", "Home")</li>
                     <li>@Html.ActionLink("Solicitações", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Perfil", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Sair", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Perfil <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Alterar Perfil", "Edit", "Instituicao")</li>
+                            <li>@Html.ActionLink("Alterar Senha", "EditSenha", "Instituicao")</li>
+                        </ul>
+<li>@Html.ActionLink("Sair", "Index", "Home")</li>
                 </ul>
             </div>
         </div>

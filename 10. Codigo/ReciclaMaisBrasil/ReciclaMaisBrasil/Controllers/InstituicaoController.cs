@@ -7,11 +7,13 @@ using Model.Models;
 using Negocio.Business;
 using ReciclaMaisBrasil.Util;
 using Model.Models.Exceptions;
+using Model.Models.Account;
 
 namespace ReciclaMaisBrasil.Controllers
 {
     public class InstituicaoController : Controller
     {
+        Instituicao inst = (Instituicao) SessionHelper.Get(SessionKeys.USUARIO);
         private GerenciadorInstituicao gerenciador;
 
         public InstituicaoController()
@@ -23,7 +25,7 @@ namespace ReciclaMaisBrasil.Controllers
         // GET: Instituicao
         public ActionResult Index()
         {
-            return View(gerenciador.ObterTodos());
+            return View();
         }
 
         // GET: Instituicao/Details/5
@@ -60,25 +62,33 @@ namespace ReciclaMaisBrasil.Controllers
         }
 
         // GET: Instituicao/Edit/5
-        public ActionResult Edit(int id)
+        [Authenticated]
+        [CustomAuthorize (NivelAcesso = Util.TipoUsuario.INSTITUICAO, MetodoAcao ="Index",Controladora ="Home")]
+        public ActionResult Edit()
         {
-            return View();
+            return View(inst);
         }
 
         // POST: Instituicao/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(FormCollection formColletion)
         {
             try
             {
-                // TODO: Add update logic here
-
+                if (ModelState.IsValid)
+                {
+                    Instituicao inst = new Instituicao();
+                    TryUpdateModel<Instituicao>(inst, formColletion.ToValueProvider());
+                    gerenciador.Editar(inst);
+                    SessionHelper.Set(SessionKeys.USUARIO, inst);
+                    return RedirectToAction("Index", "HistoricoInstituicao");
+                }
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
             }
+            return RedirectToAction("Index", "HistoricoInstituicao");
         }
 
         // GET: Instituicao/Delete/5
@@ -106,6 +116,39 @@ namespace ReciclaMaisBrasil.Controllers
         public ActionResult Mostrar()
         {
             return View(gerenciador.ObterTodos());
+        }
+
+        [Authenticated]
+        [CustomAuthorize(NivelAcesso = Util.TipoUsuario.INSTITUICAO, MetodoAcao = "Index", Controladora = "Home")]
+        public ActionResult EditSenha()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditSenha(SenhasModel senhasModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    senhasModel.NovaSenha = Criptografia.GerarHashSenha(inst.DocInstituicao + senhasModel.NovaSenha);
+                    senhasModel.SenhaAtual = Criptografia.GerarHashSenha(inst.DocInstituicao + senhasModel.SenhaAtual);
+                    if (inst.PwInstituicao == senhasModel.SenhaAtual && senhasModel.NovaSenha != inst.PwInstituicao) //Verificar se a senha nova é igual a senha da sessão
+                    {
+                        inst.PwInstituicao = senhasModel.NovaSenha;//Criptografar a senha
+                        gerenciador.Editar(inst);
+                        return RedirectToAction("Index", "HistoricoInstituicao");
+                    }
+
+                }
+
+            }
+            catch
+            {
+                
+            }
+            return View("EditSenha", "Instituicao");
         }
     }
 }

@@ -249,6 +249,9 @@
     <Content Include="Views\AdmProduto\Index.cshtml" />
     <Content Include="Views\AdmProduto\Create.cshtml" />
     <Content Include="Views\AdmProduto\Edit.cshtml" />
+    <Content Include="Views\HistoricoInstituicao\Coletas.cshtml" />
+    <Content Include="Views\Instituicao\Edit.cshtml" />
+    <Content Include="Views\Instituicao\EditSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

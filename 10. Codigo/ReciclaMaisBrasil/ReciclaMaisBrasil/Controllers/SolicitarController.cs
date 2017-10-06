@@ -112,5 +112,10 @@ namespace ReciclaMaisBrasil.Controllers
                 return View();
             }
         }
+
+        public ActionResult ValidarColeta()
+        {
+            return View();
+        }
     }
 }

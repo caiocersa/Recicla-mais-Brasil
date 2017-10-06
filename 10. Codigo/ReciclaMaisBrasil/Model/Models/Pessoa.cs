@@ -11,26 +11,26 @@ namespace Model.Models
     {
         [Required]
         [StringLength(14,MinimumLength = 14)]
-        [Display(Name = "CPF :")]
+        [Display(Name = "CPF:")]
         public string CpfPessoa { get; set; }
 
         [Required]
         [StringLength(35, MinimumLength = 6)]
-        [Display(Name = "Senha :")]
+        [Display(Name = "Senha:")]
         [DataType(DataType.Password)]
         public string PwPessoa { get; set; }
 
         [Required]
-        [Display(Name = "Nome Completo :")]
+        [Display(Name = "Nome Completo:")]
         [StringLength(100)]
         public string NmPessoa { get; set; }
 
-        [Display(Name = "Telefone :")]
+        [Display(Name = "Telefone:")]
         [DataType(DataType.PhoneNumber)]
         [StringLength(14)]
         public string Telefone { get; set; }
 
-        [Display(Name = "Nascimento :")]
+        [Display(Name = "Nascimento:")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DtNasc { get; set; }
